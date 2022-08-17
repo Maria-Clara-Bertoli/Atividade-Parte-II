@@ -25,27 +25,34 @@ public class AtividadeSelecao {
 	private double x2;
 	private double varexp;
 	private double varraiz;
+	private int soma1;
+	private int soma2;
+	private int soma3;
+	private float mediaconceito;
+	private char conceito;
+	private float aprovadoreprovado;
+	private float aumento;
+	private float novosalario;
+	private double peso;
+	private double media2;
+	int vetdecrescente[] = new int[3];
 
 	public void CompraCarne(int tipo, double quantidade, char decisao) {
 		if (quantidade <= 5) {
 			if (tipo == 1) {
 				precototal = quantidade * 4.90;
-			}
-			else if (tipo == 2) {
+			} else if (tipo == 2) {
 				precototal = quantidade * 5.90;
-			}
-			else if (tipo == 3) {
+			} else if (tipo == 3) {
 				precototal = quantidade * 6.90;
 			}
 		}
 		if (quantidade > 5) {
 			if (tipo == 1) {
 				precototal = quantidade * 5.80;
-			}
-			else if (tipo == 2) {
+			} else if (tipo == 2) {
 				precototal = quantidade * 6.80;
-			}
-			else if (tipo == 3) {
+			} else if (tipo == 3) {
 				precototal = quantidade * 7.80;
 			}
 		}
@@ -57,11 +64,9 @@ public class AtividadeSelecao {
 			System.out.println("--------------");
 			if (tipo == 1) {
 				System.out.println("Tipo de carne: Filé Duplo");
-			}
-			else if (tipo == 2) {
+			} else if (tipo == 2) {
 				System.out.println("Tipo de carne: Alcatra");
-			}
-			else if (tipo == 3) {
+			} else if (tipo == 3) {
 				System.out.println("Tipo de carne: Picanha");
 			}
 			System.out.println("Quantidade: " + quantidade);
@@ -75,11 +80,9 @@ public class AtividadeSelecao {
 			System.out.println("--------------");
 			if (tipo == 1) {
 				System.out.println("Tipo de carne: Filé Duplo");
-			}
-			else if (tipo == 2) {
+			} else if (tipo == 2) {
 				System.out.println("Tipo de carne: Alcatra");
-			}
-			else if (tipo == 3) {
+			} else if (tipo == 3) {
 				System.out.println("Tipo de carne: Picanha");
 			}
 			System.out.println("Quantidade: " + quantidade);
@@ -182,8 +185,7 @@ public class AtividadeSelecao {
 			if (litro <= 20) {
 				descontocombustivel = (valorcombustivel / 100) * 3;
 				combustiveldescontado = valorcombustivel - descontocombustivel;
-			}
-			else if (litro > 20) {
+			} else if (litro > 20) {
 				descontocombustivel = (valorcombustivel / 100) * 5;
 				combustiveldescontado = valorcombustivel - descontocombustivel;
 			}
@@ -193,8 +195,7 @@ public class AtividadeSelecao {
 			if (litro <= 20) {
 				descontocombustivel = (valorcombustivel / 100) * 4;
 				combustiveldescontado = valorcombustivel - descontocombustivel;
-			}
-			else if (litro > 20) {
+			} else if (litro > 20) {
 				descontocombustivel = (valorcombustivel / 100) * 6;
 				combustiveldescontado = valorcombustivel - descontocombustivel;
 			}
@@ -282,11 +283,9 @@ public class AtividadeSelecao {
 		media = (nota1 + nota2 + nota3) / 3;
 		if (media >= 7) {
 			System.out.println("Aprovado");
-		}
-		else if (media == 10) {
+		} else if (media == 10) {
 			System.out.println("com distinção");
-		}
-		else if (media < 7) {
+		} else if (media < 7) {
 			System.out.println("Reprovado");
 		}
 	}
@@ -295,11 +294,9 @@ public class AtividadeSelecao {
 		media = (idade1 + idade2 + idade3) / 3;
 		if (media < 25) {
 			System.out.println("Turma jovem");
-		}
-		else if (media >= 25 && media <= 40) {
+		} else if (media >= 25 && media <= 40) {
 			System.out.println("Turma adulta");
-		}
-		else if (media > 40) {
+		} else if (media > 40) {
 			System.out.println("Turma idosa");
 		}
 	}
@@ -329,34 +326,231 @@ public class AtividadeSelecao {
 			sdf.parse(data);
 			System.out.println("Data válida");
 			return true;
-			} 
-		catch(ParseException ex) {
+		} catch (ParseException ex) {
 			System.out.println("Data inválida");
 			return false;
 		}
 	}
-	
-	public void EquacaoSegundoGrau(int a, int b, int c) {
+
+	public void EquacaoSegundoGrau(double a, double b, double c) {
 		varexp = Math.pow(b, 2);
-		delta = varexp - (4*a*c);
-		if(delta < 0) {
+		delta = varexp - (4 * a * c);
+		if (delta < 0) {
 			System.out.println("A equação não possui raízes reais");
-		}
-		else if(delta == 0) {
+		} else if (delta == 0) {
+			x1 = (-b) / (2 * a);
+			System.out.println("A raíz é " + x1);
+		} else if (delta > 0) {
 			varraiz = Math.sqrt(delta);
-			x1 = (-b + varraiz)/2*a;
-			x2 = (-b - varraiz)/2*a;
-			System.out.println(x1);
-			System.out.println(x2);
+			x1 = (-b + varraiz) / (2 * a);
+			x2 = (-b - varraiz) / (2 * a);
+			System.out.println("As raízes são " + x1 + " e " + x2);
 		}
-		else if(delta > 0) {
-			varraiz = Math.sqrt(delta);
-			x1 = (-b + varraiz)/2*a;
-			x2 = (-b - varraiz)/2*a;
-			System.out.println(varraiz);
-			System.out.println(delta);
-			System.out.println(x1);
-			System.out.println(x2);
+	}
+
+	public void Triangulo(int lado1, int lado2, int lado3) {
+		soma1 = lado1 + lado2;
+		soma2 = lado2 + lado3;
+		soma3 = lado1 + lado3;
+		if (soma1 > lado3 && soma2 > lado1 && soma3 > lado2) {
+			if (lado1 == lado2 && lado2 == lado3) {
+				System.out.println("Os três lados formam um triângulo equilátero");
+			} else if (lado1 == lado2 || lado2 == lado3 || lado1 == lado3) {
+				System.out.println("Os três lados formam um triângulo isósceles");
+			} else {
+				System.out.println("Os três lados formam um triângulo escaleno");
+			}
+		} else {
+			System.out.println("Os três lados não formam um triângulo");
 		}
+	}
+
+	public void MediaConceito(float nota1, float nota2) {
+		mediaconceito = (nota1 + nota2) / 2;
+		if (mediaconceito > 9 && mediaconceito <= 10) {
+			conceito = 'A';
+		} else if (mediaconceito > 7.5 && mediaconceito <= 9) {
+			conceito = 'B';
+		} else if (mediaconceito > 6 && mediaconceito <= 7.5) {
+			conceito = 'C';
+		} else if (mediaconceito > 4 && mediaconceito <= 6) {
+			conceito = 'D';
+		} else if (mediaconceito >= 0 && mediaconceito <= 4) {
+			conceito = 'E';
+		}
+		if (conceito == 'A' || conceito == 'B' || conceito == 'C') {
+			System.out.println("Notas: " + nota1 + " e " + nota2);
+			System.out.println("Média: " + mediaconceito);
+			System.out.println("Conceito: " + conceito);
+			System.out.println("Resultado: Aprovado!");
+		} else {
+			System.out.println("Notas: " + nota1 + " e " + nota2);
+			System.out.println("Média: " + mediaconceito);
+			System.out.println("Conceito: " + conceito);
+			System.out.println("Resultado: Reprovado!");
+		}
+	}
+
+	public void AprovadoReprovado(float nota1, float nota2, float nota3, float nota4) {
+		aprovadoreprovado = (nota1 + nota2 + nota3 + nota4) / 4;
+		if (aprovadoreprovado >= 0 && aprovadoreprovado < 3) {
+			System.out.println("Reprovado!");
+		} else if (aprovadoreprovado >= 3 && aprovadoreprovado <= 6.9) {
+			System.out.println("Em exame!");
+		} else if (aprovadoreprovado >= 7 && aprovadoreprovado <= 10) {
+			System.out.println("Aprovado!");
+		}
+	}
+
+	public void Procedencia(float preco, int codigo) {
+		if (codigo == 1) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Sul");
+		} else if (codigo == 2) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Norte");
+		} else if (codigo == 3) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Leste");
+		} else if (codigo == 4) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Oeste");
+		} else if (codigo == 5 || codigo == 6) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Nordeste");
+		} else if (codigo == 7 || codigo == 8) {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Centro-Oeste");
+		} else {
+			System.out.println("Preço: " + preco);
+			System.out.println("Procedência: Importado");
+		}
+	}
+
+	public void DiaSemana(int codigo) {
+		System.out.println("O dia da semana correspondente é: ");
+		if (codigo == 1) {
+			System.out.println("Domingo");
+		} else if (codigo == 2) {
+			System.out.println("Segunda");
+		} else if (codigo == 3) {
+			System.out.println("Terça");
+		} else if (codigo == 4) {
+			System.out.println("Quarta");
+		} else if (codigo == 5) {
+			System.out.println("Quinta");
+		} else if (codigo == 6) {
+			System.out.println("Sexta");
+		} else if (codigo == 7) {
+			System.out.println("Sábado");
+		} else {
+			System.out.println("Valor inválido!");
+		}
+	}
+
+	public void Reajuste(float salario) {
+		if (salario > 0 && salario <= 280) {
+			aumento = (salario / 100) * 20;
+			novosalario = salario + aumento;
+			System.out.println("Percentual de reajuste: 20%");
+		} else if (salario > 280 && salario <= 700) {
+			aumento = (salario / 100) * 15;
+			novosalario = salario + aumento;
+			System.out.println("Percentual de reajuste: 15%");
+		} else if (salario > 700 && salario < 1500) {
+			aumento = (salario / 100) * 10;
+			novosalario = salario + aumento;
+			System.out.println("Percentual de reajuste: 10%");
+		} else if (salario >= 1500) {
+			aumento = (salario / 100) * 5;
+			novosalario = salario + aumento;
+			System.out.println("Percentual de reajuste: 5%");
+		}
+		System.out.println("Salário antes do reajuste: " + salario);
+		System.out.println("Valor do aumento: " + aumento);
+		System.out.println("Salário reajustado: " + novosalario);
+	}
+
+	public void Turno(float turno) {
+		if (turno == 'M') {
+			System.out.println("Bom Dia!");
+		} else if (turno == 'V') {
+			System.out.println("Boa Tarde!");
+		} else if (turno == 'N') {
+			System.out.println("Boa Noite!");
+		}
+	}
+
+	public void PesoIdealSexo(double pesoreal, double altura, char tipo) {
+		if (tipo == 'F') {
+			peso = (62.1 * altura) - 44.7;
+			System.out.println("Sexo: Feminino");
+			if (pesoreal > peso) {
+				System.out.println("Peso ideal: Acima");
+			} else if (pesoreal < peso) {
+				System.out.println("Peso ideal: Abaixo");
+			} else {
+				System.out.println("Peso ideal: No peso ideal");
+			}
+		} else {
+			peso = (72.7 * altura) - 58;
+			System.out.println("Sexo: Masculino");
+			if (pesoreal > peso) {
+				System.out.println("Peso ideal: Acima");
+			} else if (pesoreal < peso) {
+				System.out.println("Peso ideal: Abaixo");
+			} else {
+				System.out.println("Peso ideal: No peso ideal");
+			}
+		}
+		System.out.println("Altura: " + altura);
+		System.out.println("Peso: " + peso);
+	}
+
+	public void AprovadoReprovado2(float nota1, float nota2) {
+		media2 = (nota1 + nota2) / 2;
+		if (media2 >= 7) {
+			System.out.println("Aprovado!");
+		} else if (media2 < 7) {
+			System.out.println("Reprovado!");
+		}
+	}
+
+	public void Decrescente(int num1, int num2, int num3) {
+		if (num1 > num2 && num1 > num3) {
+			vetdecrescente[0] = num1;
+			if (num2 > num3) {
+				vetdecrescente[1] = num2;
+				vetdecrescente[2] = num3;
+			} else {
+				vetdecrescente[2] = num2;
+				vetdecrescente[1] = num3;
+			}
+		} else if (num2 > num1 && num2 > num3) {
+			vetdecrescente[0] = num2;
+			if (num1 > num3) {
+				vetdecrescente[1] = num1;
+				vetdecrescente[2] = num3;
+			} else {
+				vetdecrescente[2] = num1;
+				vetdecrescente[1] = num3;
+			}
+		} else if (num3 > num1 && num3 > num2) {
+			vetdecrescente[0] = num3;
+			if (num2 > num1) {
+				vetdecrescente[1] = num2;
+				vetdecrescente[2] = num1;
+			} else {
+				vetdecrescente[2] = num2;
+				vetdecrescente[1] = num1;
+			}
+		}
+		System.out.println(vetdecrescente[0]);
+		System.out.println(vetdecrescente[1]);
+		System.out.println(vetdecrescente[2]);
+	}
+	
+	public int Transforma(int num) {
+		return num + 1;
 	}
 }
