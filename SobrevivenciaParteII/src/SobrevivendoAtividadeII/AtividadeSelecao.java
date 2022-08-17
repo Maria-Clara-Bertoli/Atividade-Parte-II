@@ -549,8 +549,52 @@ public class AtividadeSelecao {
 		System.out.println(vetdecrescente[1]);
 		System.out.println(vetdecrescente[2]);
 	}
-	
+
 	public int Transforma(int num) {
 		return num + 1;
+	}
+
+	public void Vogal(char letra) {
+		if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+			System.out.println("A letra é vogal");
+		} else {
+			System.out.println("A letra não é vogal");
+		}
+	}
+
+	public void AnoBissexto(int ano) {
+		if (ano % 4 == 0) {
+			System.out.println("O ano é bissexto");
+		} else {
+			System.out.println("O ano não é bissexto");
+		}
+	}
+
+	public void Sexo(char sexo) {
+		if (sexo == 'F') {
+			System.out.println("Feminino");
+		} else if (sexo == 'M') {
+			System.out.println("Masculino");
+		}
+	}
+
+	public void VerificaNumero(float num) {
+		if (num > 0) {
+			System.out.println("O número é positivo");
+		} else if (num < 0) {
+			System.out.println("O número é negativo");
+		} else {
+			System.out.println("O número é igual a 0");
+		}
+	}
+
+	public void MaiorValor(int num1, int num2) {
+		if (num1 > num2) {
+			System.out.println("O número " + num1 + " é o maior");
+		} else if (num2 > num1) {
+			System.out.println("O número " + num2 + " é o maior");
+		} else {
+			System.out.println("Os números são iguais");
+		}
 	}
 }
